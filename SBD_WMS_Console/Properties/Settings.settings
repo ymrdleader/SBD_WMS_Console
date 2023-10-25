@@ -1,0 +1,22 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SBD_WMS_Console.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SBD_WMSConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Server=118.168.188.166;Port=3306;Database=sbd_wms;Uid=ym_admin;Pwd=Ym@2016Admin;SslMode=none;CharSet=utf8;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Server=118.168.188.166;Port=3306;Database=sbd_wms;Uid=ym_admin;Pwd=Ym@2016Admin;SslMode=none;CharSet=utf8;</Value>
+    </Setting>
+    <Setting Name="SunstigeConnection" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Server=118.168.188.176;Port=3306;Database=sunstige_shortagecalulation_sbd;Uid=root;Pwd=ym@mes42769778;SslMode=none;CharSet=utf8;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Server=118.168.188.176;Port=3306;Database=sunstige_shortagecalulation_sbd;Uid=root;Pwd=ym@mes42769778;SslMode=none;CharSet=utf8;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
