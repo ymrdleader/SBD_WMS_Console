@@ -67,14 +67,14 @@ namespace SBD_WMS_Console
 
                     try
                     {
-                        querySql = $@"select Prodid,ProdidName,Warehouse_No,IsForShipment from comproduct";
+                        querySql = $@"select Prodid,ProdidName,IsForShipment from comproduct";
                         cmd.CommandText = querySql;
                         MySqlDataReader dr = cmd.ExecuteReader();
                         DataTable dt = new DataTable();
                         dt.Load(dr);
                         dr.Close();
 
-                        querySunSql = $@"select t_item,t_dsca,t_cwar from sap_ttiitm001";
+                        querySunSql = $@"select t_item,t_dsca from sap_ttiitm001";
                         cmdSun.CommandText = querySunSql;
                         MySqlDataReader drSun = cmdSun.ExecuteReader();
                         DataTable dtSun = new DataTable();
@@ -85,10 +85,9 @@ namespace SBD_WMS_Console
                         foreach (DataRow rowSun in dtSun.Rows)
                         {
                             string prodidSun = rowSun["t_item"].ToString();
-                            string warehouseNoSun = rowSun["t_cwar"].ToString() == "" ? "DaLi" : rowSun["t_cwar"].ToString().Substring(2) == "01" ? "DaLi" : rowSun["t_cwar"].ToString().Substring(2) == "02" ? "DongXing" : "WenXing";
 
                             // 在 dt 中查找相同的 Prodid
-                            DataRow foundRow = dt.Select($"Prodid = '{prodidSun}' and Warehouse_No = '{warehouseNoSun}'").FirstOrDefault();
+                            DataRow foundRow = dt.Select($"Prodid = '{prodidSun}'").FirstOrDefault();
 
                             // 如果在 dt 中有找到相同的 Prodid
                             if (foundRow != null)
@@ -104,7 +103,6 @@ namespace SBD_WMS_Console
                                 // 設置 newRow 的欄位值
                                 newRow["Prodid"] = rowSun["t_item"];
                                 newRow["ProdidName"] = rowSun["t_dsca"];
-                                newRow["Warehouse_No"] = warehouseNoSun;
                                 newRow["IsForShipment"] = false;
 
                                 // 將 newRow 添加到 dt
